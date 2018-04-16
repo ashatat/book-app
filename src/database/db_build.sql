@@ -12,15 +12,15 @@ CREATE TABLE members (
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   book_name TEXT NOT NULL,
-  book_owner_id FOREIGN KEY REFERENCES members(id)
+  book_owner_id INTEGER REFERENCES members(id)
 );
 
 CREATE TABLE reservations (
   id SERIAL,
-  book_id FOREIGN KEY REFERENCES books(id),
-  member_id FOREIGN KEY REFERENCES members(id),
+  book_id INTEGER REFERENCES books(id),
+  member_id INTEGER REFERENCES members(id),
   reserve_date DATE NOT NULL,
   PRIMARY KEY (book_id, reserve_date)
 );
 
-COMMITdate ;
+COMMIT;
