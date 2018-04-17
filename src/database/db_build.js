@@ -33,7 +33,7 @@ dbConnection.query(sql, (err, res) => {
     });
   });
 
-  const reservationsValues = [[1, 2, '3/15/2018'], [2, 3, '3/15/2018'], [1, 4, '3/16/2018'], [2, 5, '3/17/2018']];
+  const reservationsValues = [[1, 4, '3/15/2018'], [2, 3, '3/15/2018'], [1, 4, '3/16/2018'], [2, 5, '3/17/2018']];
 
   reservationsValues.forEach(element => {
     const insertsql = {
