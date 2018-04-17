@@ -23,13 +23,27 @@ dbConnection.query(sql, (err, res) => {
   
   booksValues.forEach(element => {
     const insertsql = {
-      text: "INSERT INTO members (book_name, book_owner_id) VALUES ($1, $2)",
+      text: "INSERT INTO books (book_name, book_owner_id) VALUES ($1, $2)",
       values: element
     };
 
     dbConnection.query(insertsql, (err, res) => {
       if (err) throw new Error(err);
       console.log('Values has been added to books table');
+    });
+  });
+
+  const reservationsValues = [[1, 2, '3/15/2018'], [2, 3, '3/15/2018'], [1, 4, '3/16/2018'], [2, 5, '3/17/2018']];
+
+  reservationsValues.forEach(element => {
+    const insertsql = {
+      text: "INSERT INTO reservations (book_id, member_id, reserve_date) VALUES ($1, $2, $3)",
+      values: element
+    };
+
+    dbConnection.query(insertsql, (err, res) => {
+      if (err) throw new Error(err);
+      console.log('Values has been added to reservations table');
     });
   });
 
