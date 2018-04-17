@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS members, books. reservations CASCADE;
+DROP TABLE IF EXISTS members, books, reservations CASCADE;
 
 CREATE TABLE members (
   id SERIAL PRIMARY KEY,
