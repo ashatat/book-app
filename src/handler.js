@@ -20,7 +20,7 @@ const servePublic = (endpoint, res) => {
     } else {
       res.end(file);
     }
-  })
+  });
 }
 
 module.exports = {servePublic};
